@@ -1,0 +1,539 @@
+//add
+@SP
+A=M-1
+D=M
+A=A-1
+M=D+M
+@SP
+M=M-1
+
+//SUB
+@SP
+A=M-1
+D=M
+A=A-1
+M=D-M
+@SP
+M=M-1
+
+//NEG
+@SP
+D=A
+A=M-1
+M=D-M
+
+//EQ
+@SP
+A=M-1
+D=M
+A=A-1
+D=D-M
+@IF_TRUE0
+D;JEQ
+D=0
+@SP
+A=M-1
+A=A-1
+M=D
+@IF_FALSE0
+0;JMP
+(IF_TRUE0)
+D=-1
+@SP
+A=M-1
+A=A-1
+M=D
+(IF_FALSE0)
+@SP
+M=M-1
+
+//GT
+@SP
+A=M-1
+D=M
+A=A-1
+D=D-M
+@IF_TRUE0
+D;JGT
+D=0
+@SP
+A=M-1
+A=A-1
+M=D
+@IF_FALSE0
+0;JMP
+(IF_TRUE0)
+D=-1
+@SP
+A=M-1
+A=A-1
+M=D
+(IF_FALSE0)
+@SP
+M=M-1
+
+
+//LT
+@SP
+A=M-1
+D=M
+A=A-1
+D=D-M
+@IF_TRUE0
+D;JLT
+D=0
+@SP
+A=M-1
+A=A-1
+M=D
+@IF_FALSE0
+0;JMP
+(IF_TRUE0)
+D=-1
+@SP
+A=M-1
+A=A-1
+M=D
+(IF_FALSE0)
+@SP
+M=M-1
+
+//AND
+@SP
+A=M-1
+D=M
+A=A-1
+M=D&M
+@SP
+M=M-1
+
+//OR
+@SP
+A=M-1
+D=M
+A=A-1
+M=D|M
+@SP
+M=M-1
+
+//NOT
+@SP
+A=M-1
+D=!D
+M=D
+
+
+//push constant X
+@X
+D=A
+@SP
+M=D
+M=M+1
+
+
+
+
+
+//push local x
+@x
+D=A
+@LCL
+A=M+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+
+//pop local x
+@SP  		
+A=M-1
+D=M
+@1+x		
+M=D
+@SP
+M=M-1
+
+
+//pop argument x
+@SP  		
+A=M-1
+D=M
+@2+x		
+M=D
+@SP
+M=M-1
+
+//push argument x
+
+@ARG    	
+D=A      	 
+@x	      	
+D=D+A   	
+A=D     	              
+@SP      	
+M=D      	         
+@SP      	 
+M=M+1    
+
+
+
+
+
+
+//pop this x
+@SP
+A=M-1
+D=M
+@THIS
+A=M
+A=A+1
+A=A+1
+A=A+1
+A=A+1
+A=A+1
+A=A+1
+M=D
+@SP		
+M=M-1
+
+
+//push this x
+@x
+D=A
+@THIS
+A=M+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+
+//pop that x
+@SP
+A=M-1
+D=M
+@THAT
+A=M
+A=A+1
+A=A+1
+A=A+1
+A=A+1
+A=A+1
+A=A+1
+M=D
+@SP		
+M=M-1
+
+//push that x
+@x
+D=A
+@THAT
+A=M+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+
+//pop temp x 
+@SP		//get the value of the stack top
+A=M-1
+D=M
+@11		//store the value in temp 6 which is RAM[5+6]
+M=D
+@SP		//decrement the stack top pointer (pop)
+M=M-1
+
+
+
+//push temp x
+@x
+D=A
+@TEMP
+A=M+D
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+
+//pop static x
+@SP
+A=M-1
+D=M
+@classA.X	//@24 אם מדובר במחלקה הראשונה       	
+M=D
+@SP
+M=M-1
+
+
+
+//push static x
+@classA.3	//@19
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+
+
+//pop pointer 0
+@SP  		// @0
+A=M-1
+D=M
+@THIS		// @3
+M=D
+@SP
+M=M-1
+
+
+//push pointer 0
+@THIS		// @3
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+
+//pop pointer 1
+@SP 	 	// @0
+A=M-1
+D=M
+@THAT	// @4
+M=D
+@SP
+M=M-1
+
+ 
+//push pointer 1
+@THAT	// @4
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Chedva Broder 315075317
+//Chaya Robinson 323561282
+
+
+import system;
+import system'io;
+import extensions;
+
+
+public myPush(var sentence,var asmFile)
+{
+    if(sentence[1]=="constant"){
+        using(auto writer := File.assign(asmFile).logger())
+        writer.writeLine("@"+sentence[2]+"D=A\n@SP\nM=D\nM=M+1");
+    }
+}
+
+
+public countSpace(var sentence){
+     
+     var count := 1;
+     for(var i:= 0, i < sentence.Length , i+1)
+     {
+         if( sentence[i] == " ")
+            count := count + 1; 
+     }
+     ^count;
+}
+
+
+public mySplit(var sentence){
+    
+    var numSpace := countSpace(sentence);
+    var words := system'Array.allocate:numSpace;
+    for(var i :=0, i<numSpace-1, i+1)
+    { 
+        var temp :=indexOf(0," ");
+        words[i] := sentence.Substring(0,temp);
+        sentence := sentence.Substring(temp+1,sentence.Length);
+     }
+     words[i] :=sentence;
+     ^words;
+}
+
+
+     
+public vmToAsm(var myVmFile, var myAsmFile)
+{
+   
+    var fileNameReader := myVmFile;
+    var fileNameWriter := myAsmFile;
+
+    // opening a text file reader
+    using(auto reader := File.assign(fileNameReader).textreader())
+    {
+        // repeating until all the lines are read 
+        while (reader.Available)
+        {
+            
+            // read the line
+            string line := reader.readLine();
+            console.printLine(line);
+            if(line[0]!="/"){
+                var currentSentence := mySplit(line); 
+                if(currentSentence[0]=="add")
+                {
+                    using(auto writer := File.assign(fileNameWriter).logger())
+                    writer.writeLine("@SP\nA=M-1\nD=M\nA=A-1\nM=D+M\n@SP\nM=M-1");
+                }
+                if(currentSentence[0]=="sub")
+                {
+                    using(auto writer := File.assign(fileNameWriter).logger())
+                    writer.writeLine("@SP\nA=M-1\nD=M\nA=A-1\nM=D-M\n@SP\nM=M-1");
+                }
+                if(currentSentence[0]=="neg")
+                {
+                    using(auto writer := File.assign(fileNameWriter).logger())
+                    writer.writeLine("@SP\nD=A\nA=M-1\nM=D-M");
+                }
+                if(currentSentence[0]=="eq")
+                {
+                    using(auto writer := File.assign(fileNameWriter).logger())
+                    writer.writeLine("@SP\nA=M-1\nD=M\nA=A-1\nD=D-M\n@IF_TRUE0\nD;JEQ\nD=0\n@SP\nA=M-1\nA=A-1\nM=D\n@IF_FALSE0\n
+                                        0;JMP\n(IF_TRUE0)\nD=-1\n@SP\nA=M-1\nA=A-1\nM=D\n(IF_FALSE0)\n@SP\nM=M-1");
+                }
+                if(currentSentence[0]=="gt")
+                {
+                    using(auto writer := File.assign(fileNameWriter).logger())
+                    writer.writeLine("@SP\nA=M-1\nD=M\nA=A-1\nD=D-M\n@IF_TRUE0\nD;JGT\nD=0\n@SP\nA=M-1\nA=A-1\nM=D\n@IF_FALSE0\n
+                                        0;JMP\n(IF_TRUE0)\nD=-1\n@SP\nA=M-1\nA=A-1\nM=D\n(IF_FALSE0)\n@SP\nM=M-1");
+                }
+                if(currentSentence[0]=="lt")
+                {
+                    using(auto writer := File.assign(fileNameWriter).logger())
+                    writer.writeLine("@SP\nA=M-1\nD=M\nA=A-1\nD=D-M\n@IF_TRUE0\nD;JLT\nD=0\n@SP\nA=M-1\nA=A-1\nM=D\n@IF_FALSE0\n
+                                        0;JMP\n(IF_TRUE0)\nD=-1\n@SP\nA=M-1\nA=A-1\nM=D\n(IF_FALSE0)\n@SP\nM=M-1");
+                }
+                if(currentSentence[0]=="and")
+                {
+                    using(auto writer := File.assign(fileNameWriter).logger())
+                    writer.writeLine("@SP\nA=M-1\nD=M\nA=A-1\nM=D&M\n@SP\nM=M-1");
+                }
+                if(currentSentence[0]=="or")
+                {
+                    using(auto writer := File.assign(fileNameWriter).logger())
+                    writer.writeLine("@SP\nA=M-1\nD=M\nA=A-1\nM=D|M\n@SP\nM=M-1");
+                }
+                if(currentSentence[0]=="not")
+                {
+                    using(auto writer := File.assign(fileNameWriter).logger())
+                    writer.writeLine("@SP\nA=M-1\nD=!D\nM=D");
+                }
+                if(currentSentence[0]=="push"){
+                    myPush(currentSentence,myAsmFile);
+                }
+                
+                    // print the line
+                    console.printLine(line); 
+                }      
+        };
+    }
+    
+}    
+
+/*public myPrint()
+{
+    var fileNameReader := "C:\Users\Chaya\Documents\elena.5.0.550-i386\exe\exe0\hello.vm";
+   
+    // opening a text file reader
+    using(auto reader := File.assign(fileNameReader).textreader())
+    {
+        // repeating until all the lines are read 
+        while (reader.Available)
+        {
+            // read the line
+            string line := reader.readLine();
+            if(line[0]=="y"&&line[1]=="o"&&line[2]=="u")
+            {         
+                // print the line
+                console.printLine(line);
+              
+            };   
+            if(line[0]=="/"&&line[1]=="/") 
+            {
+                console.printLine(line);
+
+            };     
+           
+        };
+    }
+}*/
+    
+public program()
+{
+    var vmFiles := system'Array.allocate:5;
+    vmFiles[0] := "C:\Users\Chaya\Documents\elena.5.0.550-i386\exe\exe1\Targil1\project 07\MemoryAccess\BasicTest\BasicTest.vm";
+    vmFiles[1] := "C:\Users\Chaya\Documents\elena.5.0.550-i386\exe\exe1\Targil1\project 07\MemoryAccess\PointerTest\ointerTest.vm";
+    vmFiles[2] := "C:\Users\Chaya\Documents\elena.5.0.550-i386\exe\exe1\Targil1\project 07\MemoryAccess\StaticTest\StaticTest.vm";
+    vmFiles[3] := "C:\Users\Chaya\Documents\elena.5.0.550-i386\exe\exe1\Targil1\project 07\StackArithmetic\SimpleAdd\SimpleAdd.vm";
+    vmFiles[4] := "C:\Users\Chaya\Documents\elena.5.0.550-i386\exe\exe1\Targil1\project 07\StackArithmetic\StackTest\StackTest.vm";
+    
+    var asmFiles := system'Array.allocate:5;
+    asmFiles[0] := "C:\Users\Chaya\Documents\elena.5.0.550-i386\exe\exe1\Targil1\project 07\MemoryAccess\BasicTest\BasicTest.asm";
+    asmFiles[1] := "C:\Users\Chaya\Documents\elena.5.0.550-i386\exe\exe1\Targil1\project 07\MemoryAccess\PointerTest\ointerTest.asm";
+    asmFiles[2] := "C:\Users\Chaya\Documents\elena.5.0.550-i386\exe\exe1\Targil1\project 07\MemoryAccess\StaticTest\StaticTest.asm";
+    asmFiles[3] := "C:\Users\Chaya\Documents\elena.5.0.550-i386\exe\exe1\Targil1\project 07\StackArithmetic\SimpleAdd\SimpleAdd.asm";
+    asmFiles[4] := "C:\Users\Chaya\Documents\elena.5.0.550-i386\exe\exe1\Targil1\project 07\StackArithmetic\StackTest\StackTest.asm";
+    
+    for(var i :=0, i<vmFiles.Length,i+1)
+    {
+        vmToAsm(vmFiles[i],asmFiles[i]);
+    }
+    console.readChar();
+}
+    
+
