@@ -1,0 +1,16 @@
+<configuration>
+    <project>
+        <executable>exe5.exe</executable>
+        <arguments></arguments>
+        <output></output>
+        <options></options>
+        <namespace>exe5</namespace>
+        <template>console</template>
+        <debuginfo>-1</debuginfo>
+    </project>
+    <files>
+        <module>
+            <include>exe5.l</include>
+        </module>
+    </files>
+</configuration>
