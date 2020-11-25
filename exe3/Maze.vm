@@ -1,0 +1,490 @@
+function Maze.new 0
+push constant 0
+call Memory.alloc 1
+pop pointer 0
+push pointer 0
+call Maze.draw 1
+pop temp 0
+push pointer 0
+return
+function Maze.draw 1
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 170
+push local 0
+add
+push constant 36
+push constant 170
+push local 0
+add
+push constant 198
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+pop local 0
+label WHILE_EXP1
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 197
+push local 0
+add
+push constant 81
+push constant 197
+push local 0
+add
+push constant 116
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP1
+label WHILE_END1
+push constant 0
+pop local 0
+label WHILE_EXP2
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END2
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 233
+push local 0
+add
+push constant 108
+push constant 233
+push local 0
+add
+push constant 144
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP2
+label WHILE_END2
+push constant 0
+pop local 0
+label WHILE_EXP3
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END3
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 260
+push local 0
+add
+push constant 36
+push constant 260
+push local 0
+add
+push constant 116
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP3
+label WHILE_END3
+push constant 0
+pop local 0
+label WHILE_EXP4
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END4
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 260
+push local 0
+add
+push constant 143
+push constant 260
+push local 0
+add
+push constant 179
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP4
+label WHILE_END4
+push constant 0
+pop local 0
+label WHILE_EXP5
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END5
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 296
+push local 0
+add
+push constant 108
+push constant 296
+push local 0
+add
+push constant 144
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP5
+label WHILE_END5
+push constant 0
+pop local 0
+label WHILE_EXP6
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END6
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 296
+push local 0
+add
+push constant 162
+push constant 296
+push local 0
+add
+push constant 198
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP6
+label WHILE_END6
+push constant 0
+pop local 0
+label WHILE_EXP7
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END7
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 323
+push local 0
+add
+push constant 63
+push constant 314
+push local 0
+add
+push constant 108
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP7
+label WHILE_END7
+push constant 0
+pop local 0
+label WHILE_EXP8
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END8
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 323
+push local 0
+add
+push constant 135
+push constant 323
+push local 0
+add
+push constant 171
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP8
+label WHILE_END8
+push constant 0
+pop local 0
+label WHILE_EXP9
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END9
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 350
+push local 0
+add
+push constant 36
+push constant 350
+push local 0
+add
+push constant 81
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP9
+label WHILE_END9
+push constant 0
+pop local 0
+label WHILE_EXP10
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END10
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 350
+push local 0
+add
+push constant 99
+push constant 350
+push local 0
+add
+push constant 144
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP10
+label WHILE_END10
+push constant 0
+pop local 0
+label WHILE_EXP11
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END11
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 350
+push local 0
+add
+push constant 162
+push constant 350
+push local 0
+add
+push constant 198
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP11
+label WHILE_END11
+push constant 0
+pop local 0
+label WHILE_EXP12
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END12
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 377
+push local 0
+add
+push constant 63
+push constant 377
+push local 0
+add
+push constant 117
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP12
+label WHILE_END12
+push constant 0
+pop local 0
+label WHILE_EXP13
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END13
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 377
+push local 0
+add
+push constant 135
+push constant 377
+push local 0
+add
+push constant 171
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP13
+label WHILE_END13
+push constant 0
+pop local 0
+label WHILE_EXP14
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END14
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 404
+push local 0
+add
+push constant 63
+push constant 404
+push local 0
+add
+push constant 144
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP14
+label WHILE_END14
+push constant 0
+pop local 0
+label WHILE_EXP15
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END15
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 431
+push local 0
+add
+push constant 90
+push constant 431
+push local 0
+add
+push constant 144
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP15
+label WHILE_END15
+push constant 0
+pop local 0
+label WHILE_EXP16
+push local 0
+push constant 9
+lt
+not
+if-goto WHILE_END16
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 458
+push local 0
+add
+push constant 36
+push constant 458
+push local 0
+add
+push constant 198
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP16
+label WHILE_END16
+push constant 0
+return

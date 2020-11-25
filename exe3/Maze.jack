@@ -1,0 +1,272 @@
+class Maze{
+
+    constructor Maze new(){
+        do draw();
+        return this;
+    }
+    method void draw()
+    {
+        var int i;
+        
+    
+        //vertical
+        let i=0;
+        while(i<9){//1
+            do Screen.setColor(true);
+            do Screen.drawLine(170+i,36,170+i,198);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//2
+            do Screen.setColor(true);
+            do Screen.drawLine(197+i,81,197+i,116);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//3
+            do Screen.setColor(true);
+            do Screen.drawLine(233+i,108,233+i,144);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//4
+            do Screen.setColor(true);
+            do Screen.drawLine(260+i,36,260+i,116);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//5
+            do Screen.setColor(true);
+            do Screen.drawLine(260+i,143,260+i,179);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//6
+            do Screen.setColor(true);
+            do Screen.drawLine(296+i,108,296+i,144);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//7
+            do Screen.setColor(true);
+            do Screen.drawLine(296+i,162,296+i,198);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//8
+            do Screen.setColor(true);
+            do Screen.drawLine(323+i,63,314+i,108);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//9
+            do Screen.setColor(true);
+            do Screen.drawLine(323+i,135,323+i,171);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//10
+            do Screen.setColor(true);
+            do Screen.drawLine(350+i,36,350+i,81);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//11
+            do Screen.setColor(true);
+            do Screen.drawLine(350+i,99,350+i,144);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//12
+            do Screen.setColor(true);
+            do Screen.drawLine(350+i,162,350+i,198);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//13
+            do Screen.setColor(true);
+            do Screen.drawLine(377+i,63,377+i,117);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//14
+            do Screen.setColor(true);
+            do Screen.drawLine(377+i,135,377+i,171);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//15
+            do Screen.setColor(true);
+            do Screen.drawLine(404+i,63,404+i,144);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//16
+            do Screen.setColor(true);
+            do Screen.drawLine(431+i,90,431+i,144);
+            let i=i+1;
+        }
+
+        let i=0;
+        while(i<9){//17
+            do Screen.setColor(true);
+            do Screen.drawLine(458+i,36,458+i,198);
+            let i=i+1;
+        }
+
+        // let i=0;
+        // while(i<9){//2
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(197+i,81,197+i,116);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//1
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(170+i,36,170+i,198);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//2
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(197+i,81,197+i,116);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//2
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(197+i,81,197+i,116);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//1
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(170+i,36,170+i,198);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//2
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(197+i,81,197+i,116);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//2
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(197+i,81,197+i,116);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//1
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(170+i,36,170+i,198);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//2
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(197+i,81,197+i,116);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//2
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(197+i,81,197+i,116);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//1
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(170+i,36,170+i,198);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//2
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(197+i,81,197+i,116);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//2
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(197+i,81,197+i,116);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//1
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(170+i,36,170+i,198);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//2
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(197+i,81,197+i,116);
+        //     do i=i+1;
+        // }
+
+        // leti=0;
+        // while(i<9){//2
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(197+i,81,197+i,116);
+        //     do i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//1
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(170+i,36,170+i,198);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//2
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(197+i,81,197+i,116);
+        //     let i=i+1;
+        // }
+
+        // let i=0;
+        // while(i<9){//2
+        //     do Screen.SetColor(true);
+        //     do Screen.drawLine(197+i,81,197+i,116);
+        //     let i=i+1;
+        // }
+
+
+        
+    return;
+
+    }
+
+    
+}
